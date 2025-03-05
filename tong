@@ -3,27 +3,24 @@
 
 int main() {
     int n, i;
-    long long s = 0; // Sử dụng long long để lưu tổng S vì giá trị có thể lớn
+    long long s = 0; 
 
-    // Nhập giá trị n
     printf("Nhập giá trị n (n >= 10): ");
     scanf("%d", &n);
 
-    // Kiểm tra điều kiện n >= 10
+
     if (n < 10) {
         printf("Giá trị n phải lớn hơn hoặc bằng 10.\n");
         return 0;
     }
-
-    // Tính tổng S = 11 + 22 + 33 + ... + nn
+    
     for (i = 1; i <= n; i++) {
-        // Tạo số "ii" bằng cách nhân i với 10^(số chữ số của i) rồi cộng i
-        int num_digits = log10(i) + 1; // Tính số chữ số của i
-        int nn = i * pow(10, num_digits) + i; // Ghép số để thành "ii"
+       
+        int num_digits = log10(i) + 1; 
+        int nn = i * pow(10, num_digits) + i; 
         s += nn;
     }
 
-    // In kết quả
     printf("Tổng S = %lld\n", s);
 
     return 0;
